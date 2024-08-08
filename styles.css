@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #536942;
+    --secondary: #ffd936;
+    --white: #efefef;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--primary);
+}
+
+a{
+    text-decoration: none;
+}
+
+#main {
+    background-image: url("/img/main.png");
+    min-height: 70vh;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 16px;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--white);
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.btn-primary {
+    border: none;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    color: var(--white);
+}
+
+.main-content .intro-heading {
+    font-size: 50px;
+}
+
+.main-content .main-heading {
+    font-size: 110px;
+    margin-top: -20px;
+}
+
+.main-content p {
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    width: 30px;
+}
+
+section {
+    margin: 80px auto  ;
+}
+
+/* SERVICES */
+
+.section-title h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background-color: var(--secondary);
+    border: 10px;
+    margin: auto;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.service {
+    width: 350px;
+}
+
+.service img{
+    max-width: 100%; 
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.service img:hover {
+    transform: scale(1.05);
+}
+
+/* TESTIMONIALS */
+
+#testimonial {
+    background-color: #e5e7eb;
+}
+
+#testimonial .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 650px;
+    gap: 16px;
+    padding: 50px 16px;
+}
+
+#testimonial h1 {
+    font-size: 30px;
+    font-family: "Forum", sans-serif;
+    text-align: center;
+}
+
+#testimonial .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ABOUT */
+
+#about-us .container {
+    display: flex;
+    justify-content: space-between
+    ;
+    align-items: center;
+    gap: 120px;
+}
+
+#about-us .container .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+}
+
+#about-us .container .about-content .h1 {
+    font-family: "Forum", sans-serif;
+    font-size: 30px;
+}
+
+/* QUESTIONS */
+
+#question {
+    background-image: url("/img/main-2.png");
+    background-position: bottom center;
+    background-size: cover;
+    min-height: 500px;
+}
+
+#question .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    height: 500px;
+}
+
+#question .container h1{
+    font-size: 50px;
+}
+
+footer {
+    margin-top: -60px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 20px 16px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    
+
+}
+
+/* Mobile Device */
+@media screen and (max-width: 568px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        background-color: gray;
+        position: absolute;
+        top: 0;
+        right: -900px;
+        width: 80%;
+        height: 100vh;
+        padding-top: 80px;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    .nav-list li:not(:last-child) {
+        text-align: left;
+        width: 100%;
+        padding: 10px 50px;
+        border-bottom: 1px solid var(--white);
+    }
+    
+    #about-us .container{
+        flex-direction: column;
+        gap: 30px;
+     }
+
+     footer .container{
+        flex-direction: column;
+        gap: 20px;
+     }
+}
